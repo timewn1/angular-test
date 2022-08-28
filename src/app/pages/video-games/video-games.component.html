@@ -4,10 +4,8 @@
       <app-filter></app-filter>
     </div>
     <div class="col-span-6">
-      <app-video-game-list-item></app-video-game-list-item>
-      <app-video-game-list-item></app-video-game-list-item>
-      <app-video-game-list-item></app-video-game-list-item>
-      <app-video-game-list-item></app-video-game-list-item>
+      <app-spinner *ngIf = "isLoading"></app-spinner>
+      <app-video-game-list-item *ngFor="let item of videoGames" [videoGame]="item" ></app-video-game-list-item>
     </div>
   </div>
 </section>

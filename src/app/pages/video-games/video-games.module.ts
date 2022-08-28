@@ -7,9 +7,10 @@ import { VideoGamesComponent } from './video-games.component';
 
 import { VideoGameListItemComponent } from './video-game-list-item/video-game-list-item.component';
 import { FilterComponent } from './filter/filter.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [VideoGamesComponent, VideoGameListItemComponent, FilterComponent],
-  imports: [CommonModule, VideoGamesRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, VideoGamesRoutingModule, FormsModule, ReactiveFormsModule, SharedModule],
 })
 export class VideoGamesModule {}
