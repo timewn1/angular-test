@@ -1,8 +1,8 @@
 <nav class="pt-100 pb-50">
   <div class="container">
-    <ul class="flex font-montserrat font-medium text-45 uppercase px-35">
+    <ul class="flex font-medium text-45 uppercase px-35">
       <li class="relative mr-80" *ngFor="let item of navItems" [routerLink]="item.route">
-        <a class="text-white z-10 relative cursor-pointer">{{item.label}}</a>
+        <a class="text-primary z-10 relative cursor-pointer">{{item.label}}</a>
         <span class="opacity-0 text-dark text-65 absolute -left-35 bottom-10" routerLinkActive="opacity-100" [routerLinkActiveOptions]="{exact:true}" >{{item.shadow}}</span>
       </li>
     </ul>
