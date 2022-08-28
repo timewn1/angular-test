@@ -28,10 +28,8 @@ module.exports = {
     },
     // Override default configurations
     fontWeight: {
-      normal: 400,
+      normal: 500,
       medium: 600,
-      bold: 700,
-      black: 900,
     },
     fontSize: {
       ...range(minFontSize, maxFontSize).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {}),
