@@ -4,10 +4,15 @@
       <app-filter></app-filter>
     </div>
     <div class="col-span-6">
-      <app-spinner *ngIf = "isLoading$ | async"></app-spinner>
+      <app-spinner *ngIf = "isLoading$ | async;  else content"></app-spinner>
+      <ng-template #content>
       <ng-container *ngIf="videoGames$ | async as videoGames">
         <app-video-game-list-item *ngFor="let item of videoGames" [videoGame]="item"></app-video-game-list-item>
+        <div class="w-full text-center bg-thick py-30" *ngIf="!videoGames.length">
+          <h6 class="font-medium text-primary">No search result.</h6>
+        </div>
       </ng-container>
+      </ng-template>
     </div>
   </div>
 </section>

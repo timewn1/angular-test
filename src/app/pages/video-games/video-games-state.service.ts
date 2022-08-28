@@ -38,7 +38,7 @@ export class VideoGamesStateService {
     this.videoGames = this.allVideoGames
       .filter((item) => {
         if (name) {
-          return item.name.toLowerCase().replace(/\s/g, '').includes(name.toLowerCase());
+          return item.name.toLowerCase().replace(/\s+/g, ' ').includes(name.toLowerCase());
         } else {
           return true;
         }
