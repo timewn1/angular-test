@@ -1,1 +1,26 @@
-<p>filter works!</p>
+<div class="bg-thick px-30 pt-20 pb-30">
+  <h4 class="font-montserrat text-20 text-white font-medium mb-50">Filter Results</h4>
+  <form class="text-white">
+    <div class="form-group mb-40">
+      <label for="name">Name (contains)</label>
+      <input type="text" id="name" class="form-control" placeholder="Text string" />
+    </div>
+    <div class="form-group mb-40">
+      <label for="score">Minimum Score</label>
+      <input type="text" id="score" class="form-control" placeholder="1 - 10" />
+    </div>
+
+    <div class="form-group mb-60">
+      <label for="order">Order By</label>
+      <select id="order" class="form-control">
+        <option>Release Date</option>
+        <option>Score</option>
+        <option>Name</option>
+      </select>
+    </div>
+
+    <div class="flex justify-end">
+      <button class="btn-primary">Clear</button>
+    </div>
+  </form>
+</div>

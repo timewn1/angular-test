@@ -9,3 +9,25 @@
 .font-mulish {
   font-family: 'Mulish', sans-serif;
 }
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-family: 'Mulish', sans-serif;
+}
+
+.form-group {
+  @apply flex flex-col;
+  label {
+    @apply font-medium mb-5;
+  }
+  .form-control {
+    @apply bg-dark py-[8px] px-10 outline-0;
+  }
+}
+
+.btn-primary {
+  @apply font-medium bg-secondary px-25 py-[8px];
+}

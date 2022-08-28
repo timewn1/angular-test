@@ -1,10 +1,13 @@
 <section class="container">
-  <app-filter></app-filter>
-  <div>
-    <app-video-game-list-item></app-video-game-list-item>
-    <app-video-game-list-item></app-video-game-list-item>
-    <app-video-game-list-item></app-video-game-list-item>
-    <app-video-game-list-item></app-video-game-list-item>
-    <app-video-game-list-item></app-video-game-list-item>
+  <div class="grid grid-cols-8 gap-x-40">
+    <div class="col-span-2">
+      <app-filter></app-filter>
+    </div>
+    <div class="col-span-6 bg-white">
+      <app-video-game-list-item></app-video-game-list-item>
+      <app-video-game-list-item></app-video-game-list-item>
+      <app-video-game-list-item></app-video-game-list-item>
+      <app-video-game-list-item></app-video-game-list-item>
+    </div>
   </div>
 </section>
