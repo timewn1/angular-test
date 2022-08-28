@@ -4,8 +4,10 @@
       <app-filter></app-filter>
     </div>
     <div class="col-span-6">
-      <app-spinner *ngIf = "isLoading"></app-spinner>
-      <app-video-game-list-item *ngFor="let item of videoGames" [videoGame]="item" ></app-video-game-list-item>
+      <app-spinner *ngIf = "isLoading$ | async"></app-spinner>
+      <ng-container *ngIf="videoGames$ | async as videoGames">
+        <app-video-game-list-item *ngFor="let item of videoGames" [videoGame]="item"></app-video-game-list-item>
+      </ng-container>
     </div>
   </div>
 </section>
