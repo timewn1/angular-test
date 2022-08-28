@@ -1,9 +1,13 @@
-<nav class="pt-100 pb-50">
-  <div class="container">
-    <ul class="flex font-medium text-45 uppercase px-35">
-      <li class="relative mr-80" *ngFor="let item of navItems" [routerLink]="item.route">
-        <a class="text-primary z-10 relative cursor-pointer">{{item.label}}</a>
-        <span class="opacity-0 text-dark text-65 absolute -left-35 bottom-10" routerLinkActive="opacity-100" [routerLinkActiveOptions]="{exact:true}" >{{item.shadow}}</span>
+<nav class="pt-50 lg:pt-100 pb-20 xl:pb-50">
+  <div class="container px-15">
+    <ul class="flex flex-col lg:flex-row font-medium text-27 lg:text-40 xl:text-45 uppercase px-15 lg:px-35">
+      <li class="relative mr-80 mb-20" *ngFor="let item of navItems" [routerLink]="item.route">
+        <a class="text-primary z-10 relative cursor-pointer">{{ item.label }}</a>
+        <span
+          class="opacity-0 text-dark text-35 lg:text-50 xl:text-65 absolute -left-15 lg:-left-35 bottom-10"
+          routerLinkActive="opacity-100"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >{{ item.shadow }}</span>
       </li>
     </ul>
   </div>
