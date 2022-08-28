@@ -21,7 +21,14 @@ module.exports = {
   theme: {
     // Extend default configurations
     extend: {
-      colors: {},
+      colors: {
+        primary: '#c1d1e8',
+        secondary: '#5692e8',
+        dark: '#182c47',
+        thick: '#0e1a2b',
+        'black-start': '#081221',
+        'black-end': '#03080f',
+      },
       container: {
         center: true,
       },
