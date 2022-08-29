@@ -1,26 +1,37 @@
-<div class="bg-thick px-30 pt-20 pb-30">
-  <h4 class="text-20 text-primary font-medium mb-50">Filter Results</h4>
+<div class="bg-thick px-15 xl:px-20 2xl:px-30 pt-20 pb-30">
+  <h4 class="text-16 xl:text-20 text-primary font-medium mb-20 xl:mb-30 2xl:mb-50">Filter Results</h4>
   <form class="text-primary" [formGroup]="form">
-    <div class="form-group mb-40">
-      <label for="name">Name (contains)</label>
-      <input type="text" id="name" class="form-control" placeholder="Text string" formControlName="name" />
-    </div>
-    <div class="form-group mb-40">
-      <label for="score">Minimum Score</label>
-      <input type="text" id="score" class="form-control" placeholder="1 - 10"  formControlName="score"/>
+    <div class="form-group mb-20 xl:mb-25 2xl:mb-40">
+        <label for="name">Name (contains)</label>
+        <input type="text" id="name" class="form-control" placeholder="Text string" formControlName="name" />
     </div>
 
-    <div class="form-group mb-60">
-      <label for="orderBy">Order By</label>
-      <select id="orderBy" class="form-control" formControlName="orderBy">
-        <option [value]="OrderBy.ReleaseDate" >Release Date</option>
-        <option [value]="OrderBy.Score">Score</option>
-        <option [value]="OrderBy.Name">Name</option>
-      </select>
-    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-1 md:gap-x-20 xl:gap-x-0">
+      <div class="form-group mb-20 xl:mb-25 2xl:mb-40">
+        <label for="score">Minimum Score</label>
+        <input
+          type="number"
+          id="score"
+          class="form-control"
+          min="0"
+          max="10"
+          placeholder="1 - 10"
+          formControlName="score"
+        />
+      </div>
 
-    <div class="flex justify-end">
-      <button class="btn-primary" (click)="form.reset()" >Clear</button>
+      <div class="form-group md:col-span-2 mb-30 xl:mb-40 2xl:mb-60">
+        <label for="orderBy">Order By</label>
+        <select id="orderBy" class="form-control" formControlName="orderBy">
+          <option [value]="OrderBy.ReleaseDate">Release Date</option>
+          <option [value]="OrderBy.Score">Score</option>
+          <option [value]="OrderBy.Name">Name</option>
+        </select>
+      </div>
+
+      <div class="flex justify-end items-center mb-[7px]">
+        <button type="button" class="btn-primary" (click)="form.reset()">Clear</button>
+      </div>
     </div>
   </form>
 </div>

@@ -1,15 +1,13 @@
-<div class="flex mb-25">
-  <div class="bg-black min-w-170 min-h-170"></div>
+<div class="flex flex-col md:flex-row mb-25 w-full relative">
+  <div class="bg-black min-h-180 xl:min-w-180 xl:min-h-180 md:min-w-130 md:min-h-130"></div>
   <div class="bg-thick flex items-center">
-    <div class="px-25 py-30">
-      <h5 class="text-primary font-medium text-23">{{videoGame.name}}</h5>
-      <h6 class="text-primary font-medium text-19 mb-15">Release Date: {{videoGame.first_release_date | date:'dd/MM/yyyy'}}</h6>
-      <p class="text-primary">
-        {{videoGame.summary}}
-      </p>
+    <div class="px-15 xl:px-25 py-20 xl:py-30 flex-grow">
+      <h5 class="text-primary font-medium text-20 xl:text-23">{{ videoGame.name }}</h5>
+      <h6 class="text-primary font-medium text-16 xl:text-19 mb-15">Release Date: {{videoGame.first_release_date | date:'dd/MM/yyyy'}}</h6>
+      <p class="text-primary text-12 xl:text-14">{{ videoGame.summary }}</p>
     </div>
-    <div class="pr-60 px-30">
-      <div class="bg-secondary rounded-full text-white text-32 font-medium w-45 h-45 flex items-center justify-center">
+    <div class="pr-0 xl:pr-60 px-30 absolute top-20 right-20 md:relative md:top-0">
+      <div class="bg-secondary rounded-full text-white text-18 xl:text-32 font-medium w-30 xl:w-45 h-30 xl:h-45 flex items-center justify-center">
         <span>{{videoGame.rating / 10 | number: '1.0-0'}}</span>
       </div>
     </div>
