@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { VideoGame } from '../../core/models/video-game.model';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
+
+import { VideoGame } from '../../core/models/video-game.model';
 import { VideoGameService } from '../../core/services/video-game.service';
-import { OrderBy } from '../../core/models/filter.model';
-import { VideoGamesComponent } from './video-games.component';
+import { OrderBy, Sort } from '../../core/models/filter.model';
 
 @Injectable({
   providedIn: 'root',
@@ -34,7 +34,7 @@ export class VideoGamesStateService {
     }
   }
 
-  filter(name: string, score: number, orderBy: OrderBy) {
+  filter(name: string, score: number, orderBy: OrderBy, sort: Sort) {
     this.videoGames = this.allVideoGames
       .filter((item) => {
         if (name) {
@@ -45,13 +45,14 @@ export class VideoGamesStateService {
       })
       .filter((item) => item.rating > (score || 0) * 10)
       .sort((a, b) => {
+        const direction = sort === Sort.Ascending ? 1 : -1;
         switch (orderBy) {
           case OrderBy.Name:
-            return a.name > b.name ? 1 : -1;
+            return (a.name > b.name ? 1 : -1) * direction;
           case OrderBy.Score:
-            return b.rating - a.rating;
+            return (b.rating - a.rating) * direction;
           case OrderBy.ReleaseDate:
-            return b.first_release_date - a.first_release_date;
+            return (b.first_release_date - a.first_release_date) * direction;
           default:
             return 1;
         }

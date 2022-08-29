@@ -3,3 +3,8 @@ export enum OrderBy {
   Score = 'SCORE',
   Name = 'NAME',
 }
+
+export enum Sort {
+  Ascending = 'ASC',
+  Descending = 'DESC',
+}

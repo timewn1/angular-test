@@ -22,11 +22,29 @@
 
       <div class="form-group md:col-span-2 mb-30 xl:mb-40 2xl:mb-60">
         <label for="orderBy">Order By</label>
-        <select id="orderBy" class="form-control" formControlName="orderBy">
-          <option [value]="OrderBy.ReleaseDate">Release Date</option>
-          <option [value]="OrderBy.Score">Score</option>
-          <option [value]="OrderBy.Name">Name</option>
-        </select>
+        <div class="flex items-center justify-center w-full">
+          <div
+            class="flex items-center justify-center bg-secondary w-[28px] h-[28px] xl:w-[34px] xl:h-[34px]"
+            (click)="changeSort()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[18px] h-[18px] transform"
+              [class.rotate-180]="form.get('sort')?.value === Sort.Descending"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="3"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+          </div>
+          <select id="orderBy" class="form-control w-full" formControlName="orderBy">
+            <option [value]="OrderBy.ReleaseDate">Release Date</option>
+            <option [value]="OrderBy.Score">Score</option>
+            <option [value]="OrderBy.Name">Name</option>
+          </select>
+        </div>
       </div>
 
       <div class="flex justify-end items-center mb-[7px]">
